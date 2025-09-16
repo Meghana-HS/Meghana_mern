@@ -28,7 +28,7 @@ function Home() {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch('http://localhost:8080/products', {
+            const response = await fetch('http://localhost:3000/products', {
                 headers: { 'Authorization': localStorage.getItem('token') }
             });
             const result = await response.json();
@@ -112,7 +112,7 @@ function Home() {
     marginTop: '20px',
     marginRight:'50px',
     minWidth: '300px',
-    minHeight: '500px',   
+    minHeight: '200px',   
   }}
 >
   {filteredProducts.length > 0 ? filteredProducts.map((item, index) => (
