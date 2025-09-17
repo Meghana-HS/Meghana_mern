@@ -15,10 +15,26 @@ app.get('/ping', (req, res) => {
 
 app.use(bodyParser.json());
 
+import cors from "cors";
+
+const allowedOrigins = [
+  "https://meghana-mern-bctw-5nadawiez-meghana-hss-projects.vercel.app",
+  "http://localhost:3000"
+];
+
 app.use(cors({
-  origin: process.env.CLIENT_URL,   // frontend URL (http://localhost:3000 or deployed URL)
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true
 }));
+
+
+
 
 app.use('/auth', AuthRouter);
 app.use('/products', ProductRouter);
