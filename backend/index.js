@@ -15,7 +15,6 @@ app.get('/ping', (req, res) => {
 
 app.use(bodyParser.json());
 
-import cors from "cors";
 
 const allowedOrigins = [
   "https://meghana-mern-bctw-5nadawiez-meghana-hss-projects.vercel.app",
