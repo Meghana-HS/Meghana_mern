@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 
 const allowedOrigins = [
-   "https://meghana-mern-1.onrender.com" ,
+   "https://meghana-mern-1-finall.onrender.com",
   "https://meghana-mern-bctw-5nadawiez-meghana-hss-projects.vercel.app",
   "http://localhost:3000"
 ];
