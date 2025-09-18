@@ -15,24 +15,7 @@ app.get('/ping', (req, res) => {
 
 app.use(bodyParser.json());
 
-
-const allowedOrigins = [
-   "https://meghana-mern-1-finall.onrender.com",
-  "https://meghana-mern-bctw-5nadawiez-meghana-hss-projects.vercel.app",
-  "http://localhost:3000"
-];
-
-app.use(cors({
-  origin: function(origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true
-}));
-
+app.use(cors());
 
 
 
